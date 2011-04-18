@@ -38,4 +38,29 @@ var_dump($result);
 
 // close cURL resource, and free up system resources
 curl_close($ch);
+
+
+
+
+
+// Email adding
+$data = array('_method' => 'PUT',
+	      'emails' => "someone@somehost.net\nlarry@page.net");
+
+$ch = curl_init();
+// set URL and other appropriate options
+curl_setopt($ch, CURLOPT_URL, 'http://isuppress.local/api/v1/lists/update');
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($ch, CURLOPT_USERPWD, "zzz:xxx123");
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// post data to URL
+$response = curl_exec($ch);
+$result = json_decode($response);
+
+var_dump($result);
+curl_close($ch);
+
 ?>
