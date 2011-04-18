@@ -8,7 +8,7 @@ $data = array('_method' => 'PUT',
 	      'file' => '@20k.txt');
 
 // set URL and other appropriate options
-curl_setopt($ch, CURLOPT_URL, 'http://isuppress.local/api/v1/lists/2');
+curl_setopt($ch, CURLOPT_URL, 'http://isuppress.local/api/v1/lists/update');
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, "zzz:xxx123");
 curl_setopt($ch, CURLOPT_POST, 1);
